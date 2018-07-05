@@ -1,0 +1,45 @@
+<% include ./partials/head %>
+
+<p>
+    ID:
+    <%= user.facebook.id %>
+    <br/>
+    Username:
+    <%= user.facebook.username %>
+    <br/>
+    Name:
+    <%= user.facebook.name %>
+    <br/>
+    <% if (user.facebook.email) { %>
+    
+    Email:
+    <%= user.facebook.email %>
+    <br/>
+    
+    <form name="form1" method="POST" action="/facebook-search">
+        <table>
+            <tr>
+                <td>Query term</td>
+                <td>
+                    <input type="text" name="queryTerm">
+                </td>
+            </tr>
+            <tr>
+                <td>Search Type</td>
+                <td>
+                    <input type="text" name="searchType">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <input type="submit" value="Search">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <a href="/facebook/getPosts">Get Posts</a>
+
+
+    <% } %>
+</p>

@@ -1,0 +1,40 @@
+<!-- views/index.ejs -->
+
+<!doctype html>
+
+<html>
+
+<% include ./partials/head %>
+
+<body>
+
+    <div class="container">
+
+        <div class="jumbotron text-center">
+
+            <h1>
+                <span class="fa fa-lock"></span> Node Authentication</h1>
+
+            <% if (!user) { %>
+            
+                <p>Login or Register with:</p>
+                <p>Welcome! Please login with:
+                    <a href="/login" class="btn btn-primary">
+                        <span class="fa fa-facebook"></span> Facebook</a></p>
+            
+                <% } else { %>
+            
+                    <p>Hello,
+                        <%= user.facebook.name %>. <br/>View your
+                            <a href="/profile">profile</a>.</p>
+            
+            <% } %>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
